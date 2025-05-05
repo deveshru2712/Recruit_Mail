@@ -5,6 +5,7 @@ import "./globals.css";
 const bricolageGrotesque = Bricolage_Grotesque({
   subsets: ["latin"],
   variable: "--font-bricolage",
+  weight: ["200", "300", "400", "500", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {
@@ -27,7 +28,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning={true}>
-      <body className={` ${bricolageGrotesque.className} antialiased`}>
+      <body
+        className={` ${bricolageGrotesque.className} bg-black/95 antialiased`}
+      >
         {children}
       </body>
     </html>
