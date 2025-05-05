@@ -35,14 +35,14 @@ const AuthForm = () => {
             alt="Mail icon"
             width={48}
             height={48}
-            className="animate-float"
+            className="animate-float cursor-pointer"
           />
         </div>
 
         {/* Main Headline */}
         <div className="my-5 text-center">
           <Cover>
-            <span className="text-2xl font-bold bg-gradient-to-r from-amber-300 to-orange-500 bg-clip-text text-transparent">
+            <span className="text-2xl font-bold cursor-pointer bg-gradient-to-r  from-amber-300 to-orange-500 bg-clip-text text-transparent">
               Supercharge Your Job Search
             </span>
           </Cover>
@@ -55,7 +55,7 @@ const AuthForm = () => {
 
         <button
           onClick={handleGoogleSignIn}
-          className="flex items-center justify-center gap-3 w-full max-w-xs px-6 py-3 bg-white text-gray-800 rounded-lg font-medium hover:bg-gray-100 transition-colors border border-gray-300"
+          className="flex items-center justify-center gap-3 cursor-pointer w-full max-w-xs px-6 py-3 bg-white text-gray-800 rounded-lg font-medium hover:bg-gray-100 transition-colors border border-gray-300"
         >
           <Image src={"/google.png"} alt="google" height={25} width={25} />
           Continue with Google

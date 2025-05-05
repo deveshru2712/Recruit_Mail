@@ -6,6 +6,7 @@ const bricolageGrotesque = Bricolage_Grotesque({
   subsets: ["latin"],
   variable: "--font-bricolage",
   weight: ["200", "300", "400", "500", "600", "700", "800"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -29,9 +30,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning={true}>
       <body
-        className={` ${bricolageGrotesque.className} bg-black/95 antialiased`}
+        className={` ${bricolageGrotesque.className} bg-gradient-to-br from-blue-100 to-purple-100 antialiased`}
       >
-        {children}
+        <div className="min-h-screen flex flex-col">{children}</div>
       </body>
     </html>
   );
