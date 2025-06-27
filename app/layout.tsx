@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Bricolage_Grotesque } from "next/font/google";
 import "./globals.css";
-import Overlay from "./components/Overlay";
+import Overlay from "@/components/Overlay";
 
 const bricolage = Bricolage_Grotesque({
   variable: "--font-bricolage",
