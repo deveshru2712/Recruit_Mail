@@ -57,3 +57,64 @@ export const recruiterReachFeatures = [
     action: "Schedule Meeting",
   },
 ];
+
+export const AnalyticsFeature = [
+  "Track open & response rates in real-time",
+  "Identify best-performing templates",
+  "Discover optimal sending times",
+  "Monitor candidate engagement heatmaps",
+  "Compare team performance metrics",
+];
+
+export const outreachData = [
+  {
+    name: "Mon",
+    Open_Rate: 42,
+    Reply_Rate: 12,
+    Conversion: 3,
+  },
+  {
+    name: "Tue",
+    Open_Rate: 68,
+    Reply_Rate: 18,
+    Conversion: 5,
+  },
+  {
+    name: "Wed",
+    Open_Rate: 55,
+    Reply_Rate: 14,
+    Conversion: 4,
+  },
+  {
+    name: "Thu",
+    Open_Rate: 80,
+    Reply_Rate: 22,
+    Conversion: 7,
+  },
+  {
+    name: "Fri",
+    Open_Rate: 75,
+    Reply_Rate: 20,
+    Conversion: 6,
+  },
+  {
+    name: "Sat",
+    Open_Rate: 38,
+    Reply_Rate: 8,
+    Conversion: 2,
+  },
+  {
+    name: "Sun",
+    Open_Rate: 45,
+    Reply_Rate: 10,
+    Conversion: 3,
+  },
+];
+
+export const trendData = [
+  { name: "Week 1", value: 150 },
+  { name: "Week 2", value: 230 },
+  { name: "Week 3", value: 320 },
+  { name: "Week 4", value: 275 },
+  { name: "Week 5", value: 400 },
+];

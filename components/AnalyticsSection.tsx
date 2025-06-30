@@ -7,102 +7,135 @@ import {
   DropdownMenuLabel,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { ChevronDown } from "lucide-react";
+import { BadgeQuestionMark, Check, ChevronDown } from "lucide-react";
+import { AnalyticsFeature } from "@/constant";
+import Overlay_graph from "./Overlay_graph";
+import Charts from "./Charts";
 
 const AnalyticsSection = () => {
   return (
-    <section className="px-6 py-16 md:px-12 md:py-24">
+    <section className="px-4 py-16 sm:px-6 lg:px-8 lg:py-24 relative">
+      {/* Background decoration */}
+      <div className="absolute inset-0 overflow-hidden -z-10">
+        <div className="absolute top-0 left-1/2 w-[500px] h-[500px] -translate-x-1/2 -translate-y-1/2 bg-teal-500/10 rounded-full blur-[100px]" />
+      </div>
+
       <div className="mx-auto max-w-7xl">
         {/* Section Header */}
         <div className="mb-16 text-center">
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-teal-400">
+          <h2 className="text-4xl font-bold tracking-tight sm:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-teal-400 to-teal-600">
             Data-Driven Outreach Performance
           </h2>
-          <p className="mt-4 text-lg text-gray-300">
-            Measure what matters with actionable insights
+          <p className="mt-4 text-xl text-gray-300 max-w-3xl mx-auto">
+            Measure what matters with actionable insights and real-time
+            analytics
           </p>
         </div>
 
         <div className="grid gap-8 lg:grid-cols-4">
-          {/* Key Metrics */}
+          {/* Key Metrics - Enhanced Sidebar */}
           <div className="lg:col-span-1 space-y-8">
-            <div className="space-y-4">
-              <h3 className="text-xl font-semibold text-gray-100">
+            <div className="space-y-6 p-6 bg-gray-900/50 rounded-xl border border-gray-800 backdrop-blur-sm">
+              <h3 className="text-xl font-semibold text-white">
                 Optimize Your Strategy
               </h3>
-              <ul className="space-y-4 text-gray-300">
-                <li className="flex items-start">
-                  <span className="mr-2 text-teal-400">✓</span>
-                  <span>Track open & response rates in real-time</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-2 text-teal-400">✓</span>
-                  <span>Identify best-performing templates</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-2 text-teal-400">✓</span>
-                  <span>Discover optimal sending times</span>
-                </li>
+              <ul className="space-y-5">
+                {AnalyticsFeature.map((item, index) => (
+                  <li key={index} className="flex items-start group">
+                    <span className="flex-shrink-0 mt-0.5 mr-3 text-teal-400 opacity-90 group-hover:opacity-100 transition-opacity">
+                      <Check className="text-teal-400" size={16} />
+                    </span>
+                    <span className="text-gray-300 group-hover:text-white transition-colors">
+                      {item}
+                    </span>
+                  </li>
+                ))}
               </ul>
             </div>
 
-            <div className="p-4 bg-gray-800 rounded-lg border border-gray-700">
-              <h4 className="font-medium text-teal-400 mb-2">Pro Tip</h4>
-              <p className="text-sm text-gray-300">
-                Emails sent between 10-11 AM have 27% higher open rates based on
-                your history.
-              </p>
+            <div className="p-5 bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl border border-gray-700/50 hover:border-teal-400/30 transition-colors duration-300 group">
+              <div className="flex items-start">
+                <div className="flex-shrink-0 p-2 bg-teal-500/10 rounded-lg mr-3 group-hover:bg-teal-500/20 transition-colors">
+                  <BadgeQuestionMark className="text-teal-400" size={16} />
+                </div>
+                <div>
+                  <h4 className="font-medium text-teal-400 mb-1.5">Pro Tip</h4>
+                  <p className="text-sm text-gray-300 group-hover:text-gray-100 transition-colors">
+                    Emails sent between 10-11 AM have 27% higher open rates
+                    based on your history. Try scheduling more outreach during
+                    this window.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
 
-          {/* Graph Card */}
+          {/* Graph Card - Main Content */}
           <div className="lg:col-span-3">
-            <Card className="h-full p-6 bg-slate-100 border-gray-700">
-              <div className="flex justify-between items-center mb-6">
-                <h3 className="text-lg font-semibold text-gray-800">
-                  Outreach Performance
-                </h3>
+            <Card className="h-full p-6 bg-gray-900/50 border border-gray-800 backdrop-blur-sm hover:shadow-[0_0_30px_-5px_rgba(45,212,191,0.1)] transition-shadow">
+              <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 gap-4">
+                <div>
+                  <h3 className="text-xl font-semibold text-white">
+                    Outreach Performance
+                  </h3>
+                  <p className="text-sm text-gray-400 mt-1">
+                    Track your campaign effectiveness over time
+                  </p>
+                </div>
 
                 <DropdownMenu>
-                  <DropdownMenuTrigger className="flex items-center gap-2 text-sm px-3 py-1.5 font-semibold rounded-md border border-gray-600 hover:bg-slate-200/80 transition-colors text-gray-800">
+                  <DropdownMenuTrigger className="flex items-center gap-2 text-sm px-4 py-2 font-medium rounded-lg border border-gray-700 bg-gray-800 hover:bg-gray-700/80 hover:border-gray-600 transition-colors text-gray-200">
                     Last 7 days
-                    <ChevronDown className="w-4 h-4" />
+                    <ChevronDown className="w-4 h-4 text-gray-400" />
                   </DropdownMenuTrigger>
-                  <DropdownMenuContent className="bg-slate-100 border-gray-700 text-gray-800 font-semibold">
-                    <DropdownMenuLabel className="text-gray-400 font-semibold">
+                  <DropdownMenuContent className="w-48 bg-gray-800 border border-gray-700 text-gray-200 font-medium py-1 rounded-lg shadow-xl">
+                    <DropdownMenuLabel className="px-2 py-1.5 text-xs text-gray-400 font-medium">
                       Time Range
                     </DropdownMenuLabel>
-                    <DropdownMenuItem className="focus:bg-gray-300/60 cursor-pointer font-semibold">
+                    <DropdownMenuItem className="px-2 py-1.5 text-sm focus:bg-gray-700/50 cursor-pointer rounded-md mx-1">
                       Last 7 days
                     </DropdownMenuItem>
-                    <DropdownMenuItem className="focus:bg-gray-300/60 cursor-pointer font-semibold">
+                    <DropdownMenuItem className="px-2 py-1.5 text-sm focus:bg-gray-700/50 cursor-pointer rounded-md mx-1">
                       Last 30 days
                     </DropdownMenuItem>
-                    <DropdownMenuItem className="focus:bg-gray-300/60 cursor-pointer font-semibold">
+                    <DropdownMenuItem className="px-2 py-1.5 text-sm focus:bg-gray-700/50 cursor-pointer rounded-md mx-1">
                       Last quarter
+                    </DropdownMenuItem>
+                    <div className="border-t border-gray-700/50 my-1" />
+                    <DropdownMenuItem className="px-2 py-1.5 text-sm focus:bg-gray-700/50 cursor-pointer rounded-md mx-1">
+                      Custom range...
                     </DropdownMenuItem>
                   </DropdownMenuContent>
                 </DropdownMenu>
               </div>
 
-              {/* Graph Placeholder */}
-              <div className="bg-slate-100 rounded-lg h-80 flex items-center justify-center border ">
-                <p className="text-gray-500">[Chart Component]</p>
+              <div className="bg-gray-800/50 rounded-xl mih-h-80 flex items-center justify-center border border-gray-700/50 relative overflow-hidden">
+                <div className="absolute inset-0">
+                  <Overlay_graph />
+                </div>
+
+                {/* Mock graph bars */}
+                <div className="flex justify-center items-center w-full h-full px-6 py-4">
+                  <Charts />
+                </div>
               </div>
 
-              <div className="mt-4 flex justify-center space-x-6 text-sm font-semibold">
-                <span className="flex items-center text-slate-700">
-                  <span className="w-3 h-3 bg-teal-500 rounded-full mr-2"></span>
-                  Open Rate
-                </span>
-                <span className="flex items-center text-slate-700">
-                  <span className="w-3 h-3 bg-blue-400 rounded-full mr-2"></span>
-                  Reply Rate
-                </span>
-                <span className="flex items-center text-slate-700">
-                  <span className="w-3 h-3 bg-purple-400 rounded-full mr-2"></span>
-                  Conversion
-                </span>
+              <div className="mt-6 flex flex-wrap justify-center gap-4 text-sm font-medium">
+                {[
+                  { color: "bg-teal-500", text: "Open Rate" },
+                  { color: "bg-blue-400", text: "Reply Rate" },
+                  { color: "bg-purple-400", text: "Conversion" },
+                ].map((item, index) => (
+                  <div
+                    key={index}
+                    className="flex items-center px-3 py-1.5 rounded-full bg-gray-800/50 border border-gray-700/50 hover:bg-gray-700/30 transition-colors"
+                  >
+                    <span
+                      className={`w-2.5 h-2.5 ${item.color} rounded-full mr-2`}
+                    ></span>
+                    <span className="text-gray-300">{item.text}</span>
+                  </div>
+                ))}
               </div>
             </Card>
           </div>
