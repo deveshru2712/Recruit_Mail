@@ -2,6 +2,7 @@ import React from "react";
 import { Metadata } from "next";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "RecruiterReach - Automated Personalized Email Outreach",
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
 
 const HeroSection = () => {
   return (
-    <section className="px-6 py-12 md:px-12 md:py-24 lg:py-32">
+    <section className="px-6 py-12 md:px-12 lg:py-24">
       <div className="max-w-6xl mx-auto text-center">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-100 mb-6 leading-tight">
           <span className="bg-gradient-to-r from-teal-400 to-teal-600 text-transparent bg-clip-text">
@@ -48,9 +49,11 @@ const HeroSection = () => {
           outreach emails that actually get responses.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
-          <Button className="bg-gradient-to-r from-teal-500 to-teal-600 hover:from-teal-400 hover:to-teal-500 text-white px-8 py-4 text-lg w-full sm:w-auto transition-all duration-300 hover:scale-105 transform shadow-lg hover:shadow-teal-500/20">
-            Get Started
-          </Button>
+          <Link href={"/sign-in"}>
+            <Button className="bg-gradient-to-r from-teal-500 to-teal-600 hover:from-teal-400 hover:to-teal-500 text-white px-8 py-4 text-lg w-full sm:w-auto transition-all duration-300 hover:scale-105 transform shadow-lg hover:shadow-teal-500/20">
+              Get Started
+            </Button>
+          </Link>
         </div>
         <div className="w-full flex items-center justify-center mt-12 md:mt-20 px-4">
           <div className="relative w-full max-w-4xl rounded-2xl overflow-hidden shadow-xl">

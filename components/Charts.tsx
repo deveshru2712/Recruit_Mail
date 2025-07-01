@@ -29,22 +29,17 @@ const Charts = () => {
   } satisfies ChartConfig;
 
   return (
-    <div className="rounded-xl w-full border border-gray-800 bg-gradient-to-br from-gray-900/50 to-gray-900/30 p-6 shadow-lg backdrop-blur-sm h-full min-h-[500px] flex flex-col">
-      <div className="mb-6 flex items-center justify-between">
+    <div className="rounded-xl w-full border border-gray-800 bg-gradient-to-br from-gray-900/50 to-gray-900/30 p-4 shadow-lg backdrop-blur-sm flex flex-col h-full">
+      <div className="mb-4 flex items-center justify-between">
         <div>
-          <h3 className="text-xl font-semibold text-white">
-            Outreach Performance
-          </h3>
-          <p className="text-sm text-gray-400 mt-1">
-            Weekly email campaign metrics
-          </p>
+          <p className="text-xs text-gray-400">Weekly email campaign metrics</p>
         </div>
-        <div className="rounded-lg bg-gray-800 px-3 py-1 text-sm font-medium text-teal-400">
+        <div className="rounded-lg bg-gray-800 px-2 py-1 text-xs font-medium text-teal-400">
           Last 7 days
         </div>
       </div>
 
-      <div className="flex-1">
+      <div className="flex-1 w-full h-[320px]">
         <ChartContainer config={chartConfig} className="h-full w-full">
           <ResponsiveContainer width="100%" height="100%">
             <BarChart
@@ -61,13 +56,13 @@ const Charts = () => {
                 stroke="#9CA3AF"
                 tickLine={false}
                 axisLine={false}
-                tick={{ fill: "#9CA3AF" }}
+                tick={{ fill: "#9CA3AF", fontSize: 12 }}
               />
               <YAxis
                 stroke="#9CA3AF"
                 tickLine={false}
                 axisLine={false}
-                tick={{ fill: "#9CA3AF" }}
+                tick={{ fill: "#9CA3AF", fontSize: 12 }}
               />
               <Tooltip
                 contentStyle={{
@@ -75,12 +70,18 @@ const Charts = () => {
                   borderColor: "#1F2937",
                   borderRadius: "0.5rem",
                   boxShadow: "0 4px 20px rgba(0,0,0,0.3)",
+                  fontSize: 12,
                 }}
-                itemStyle={{ color: "#F3F4F6" }}
+                itemStyle={{
+                  color: "#F3F4F6",
+                  fontSize: 12,
+                  padding: "4px 0",
+                }}
                 labelStyle={{
                   color: "#2DD4BF",
                   fontWeight: 600,
-                  marginBottom: "8px",
+                  marginBottom: "6px",
+                  fontSize: 12,
                 }}
                 cursor={{ fill: "#1f2937" }}
               />
