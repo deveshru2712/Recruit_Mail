@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
+import { redirect } from "next/navigation";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -34,7 +35,10 @@ const Navbar = () => {
             >
               Pricing
             </Link>
-            <Button className="bg-teal-600 hover:bg-teal-500 text-white cursor-pointer transition-colors duration-300">
+            <Button
+              onClick={() => redirect("/sign-in")}
+              className="bg-teal-600 hover:bg-teal-500 text-white cursor-pointer transition-colors duration-300"
+            >
               Join Now
             </Button>
           </div>
@@ -52,7 +56,6 @@ const Navbar = () => {
           </button>
         </div>
 
-        {/* Animated Mobile Menu */}
         <div
           className={`md:hidden overflow-hidden transition-all duration-500 ease-in-out ${
             isOpen ? "max-h-96 mt-6 pb-6" : "max-h-0"

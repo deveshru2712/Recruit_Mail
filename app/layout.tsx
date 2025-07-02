@@ -9,7 +9,7 @@ const geist = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "RecruiterReach - Automated Personalized Email Outreach",
+  title: "RecruiterMail - Automated Personalized Email Outreach",
   description:
     "Streamline your job search with AI-powered personalized email automation for recruiters. Send tailored, professional outreach emails that get results.",
   keywords: [

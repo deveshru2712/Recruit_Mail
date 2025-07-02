@@ -13,15 +13,15 @@ import { signInWithGoogle } from "@/lib/actions/auth.actions";
 
 const Page = () => {
   return (
-    <div className="h-screen w-screen flex justify-center items-center relative">
+    <div className="h-screen w-screen flex justify-center items-center relative px-8 py-6">
       <div className="absolute inset-0 bg-gray-950/50 -z-50" />
       {/* Main Card */}
-      <Card className="w-full max-w-md border border-teal-400/30 rounded-lg px-6 py-5 relative z-50 bg-gradient-to-br from-slate-950/60 to-teal-900/25 group overflow-visible">
+      <Card className="w-full max-w-md border border-teal-400/30 rounded-lg px-4 md:px-6 py-5 relative z-50 bg-gradient-to-br from-slate-950/60 to-teal-900/25 group overflow-visible">
         <div className="absolute -z-10 inset-0 rounded-lg bg-transparent group-hover:shadow-[0px_1px_20px_rgba(94,234,212,0.4)] transition-all duration-500" />
 
         <CardHeader className="pb-4 space-y-3">
           <CardTitle>
-            <h1 className="text-3xl font-bold text-teal-400">RecruiterReach</h1>
+            <h1 className="text-3xl font-bold text-teal-400">Recruiter Mail</h1>
             <p className="text-slate-300 text-sm font-medium mt-1">
               Automated Personalized Email Outreach
             </p>

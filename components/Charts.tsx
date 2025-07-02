@@ -29,8 +29,8 @@ const Charts = () => {
   } satisfies ChartConfig;
 
   return (
-    <div className="rounded-xl w-full border border-gray-800 bg-gradient-to-br from-gray-900/50 to-gray-900/30 p-4 shadow-lg backdrop-blur-sm flex flex-col h-full">
-      <div className="mb-4 flex items-center justify-between">
+    <div className="rounded-xl w-full border border-gray-800 bg-gradient-to-br from-gray-900/50 to-gray-900/30 p-3 sm:p-4 shadow-lg backdrop-blur-sm flex flex-col h-full">
+      <div className="mb-3 sm:mb-4 flex items-center justify-between">
         <div>
           <p className="text-xs text-gray-400">Weekly email campaign metrics</p>
         </div>
@@ -39,12 +39,19 @@ const Charts = () => {
         </div>
       </div>
 
-      <div className="flex-1 w-full h-[320px]">
+      <div className="flex-1 w-full sm:h-[250px] max-h-[800px]">
         <ChartContainer config={chartConfig} className="h-full w-full">
-          <ResponsiveContainer width="100%" height="100%">
+          <ResponsiveContainer width="100%" height="100%" debounce={1}>
             <BarChart
               data={outreachData}
-              margin={{ top: 20, right: 20, left: 0, bottom: 10 }}
+              margin={{
+                top: 20,
+                right: 20,
+                left: 0,
+                bottom: 10,
+              }}
+              barSize={14}
+              barGap={4}
             >
               <CartesianGrid
                 strokeDasharray="3 3"
@@ -56,13 +63,16 @@ const Charts = () => {
                 stroke="#9CA3AF"
                 tickLine={false}
                 axisLine={false}
-                tick={{ fill: "#9CA3AF", fontSize: 12 }}
+                tick={{ fill: "#9CA3AF", fontSize: 10 }}
+                tickMargin={10}
               />
               <YAxis
                 stroke="#9CA3AF"
                 tickLine={false}
                 axisLine={false}
-                tick={{ fill: "#9CA3AF", fontSize: 12 }}
+                tick={{ fill: "#9CA3AF", fontSize: 10 }}
+                tickMargin={10}
+                width={30}
               />
               <Tooltip
                 contentStyle={{
