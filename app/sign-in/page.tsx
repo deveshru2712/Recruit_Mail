@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import { signInWithGoogle } from "@/lib/actions/auth.actions";
 
 const Page = () => {
   return (
@@ -69,7 +70,10 @@ const Page = () => {
               </p>
             </div>
 
-            <Button className="w-full flex items-center justify-center gap-3 px-6 py-5 rounded-lg border border-teal-400/20 bg-teal-500 hover:bg-teal-400 transition-colors">
+            <Button
+              onClick={signInWithGoogle}
+              className="cursor-pointer w-full flex items-center justify-center gap-3 px-6 py-5 rounded-lg border border-teal-400/20 bg-teal-500 hover:bg-teal-400 transition-colors"
+            >
               <Image src="/google.png" alt="google" height={24} width={24} />
               <span className="font-semibold text-base">
                 Continue with Google
