@@ -42,10 +42,10 @@ export default function PricingCard({
             Starting from
           </CardDescription>
           <div className="flex items-baseline justify-center mb-4">
-            <span className="text-4xl font-bold text-white">{price}</span>
-            <span className="text-gray-400 ml-2">{period}</span>
+            <span className="text-3xl font-bold text-white">{price}</span>
+            <span className="text-gray-400 ml-2 font-semibold">{period}</span>
           </div>
-          <CardDescription className="text-gray-300 text-sm">
+          <CardDescription className="text-gray-200 text-base font-base">
             {description}
           </CardDescription>
         </CardHeader>
@@ -65,7 +65,7 @@ export default function PricingCard({
 
         <CardFooter className="pt-4">
           <Button
-            className={`w-full py-3 font-semibold transition-all duration-300 ${
+            className={`w-full cursor-pointer py-3 font-semibold transition-all duration-300 ${
               buttonVariant === "default"
                 ? "bg-teal-500 hover:bg-teal-600 text-white"
                 : "bg-gray-800/50 hover:bg-gray-700/50 text-white border border-gray-700 hover:border-teal-500 backdrop-blur-sm"

@@ -1,62 +1,91 @@
 import React from "react";
 import Link from "next/link";
 import PricingCard from "./PricingCard";
-import { Award, FileText, Settings, TrendingUp, Users } from "lucide-react";
+import {
+  FileText,
+  TrendingUp,
+  Users,
+  Mail,
+  BarChart2,
+  Calendar,
+  MessageSquare,
+  Zap,
+  PackageCheck,
+  PanelsTopLeft,
+} from "lucide-react";
 
 export default function PricingSection() {
-  const basicFeatures = [
+  const recruiterReachFeatures = [
     {
-      text: "Customized Sales Strategy",
-      icon: <Settings className="w-5 h-5 text-purple-400" />,
+      text: "AI-Powered Email Personalization",
+      icon: <Mail className="w-5 h-5 text-purple-400" />,
     },
     {
-      text: "Lead Generation Framework",
+      text: "Recruiter Database Integration",
       icon: <Users className="w-5 h-5 text-purple-400" />,
     },
     {
-      text: "Sales Process Audit",
+      text: "Smart Email Scheduling",
+      icon: <Calendar className="w-5 h-5 text-purple-400" />,
+    },
+    {
+      text: "Dynamic Email Templates",
       icon: <FileText className="w-5 h-5 text-purple-400" />,
-    },
-    {
-      text: "Monthly Performance Review",
-      icon: <TrendingUp className="w-5 h-5 text-purple-400" />,
-    },
-    {
-      text: "CRM Integration & Automation",
-      icon: <Settings className="w-5 h-5 text-purple-400" />,
-    },
-    {
-      text: "Intensive Sales Training Program",
-      icon: <Award className="w-5 h-5 text-purple-400" />,
     },
   ];
 
   const professionalFeatures = [
     {
-      text: "Customized Sales Strategy",
-      icon: <Settings className="w-5 h-5 text-purple-400" />,
+      text: "Everything inside of the free plan",
+      icon: <PackageCheck className="w-5 h-5 text-purple-400" />,
     },
     {
-      text: "Lead Generation Framework",
-      icon: <Users className="w-5 h-5 text-purple-400" />,
+      text: "CRM-Like Tracking",
+      icon: <PanelsTopLeft className="w-5 h-5 text-purple-400" />,
     },
     {
-      text: "Sales Process Audit",
-      icon: <FileText className="w-5 h-5 text-purple-400" />,
+      text: "AI Reply Suggestions",
+      icon: <MessageSquare className="w-5 h-5 text-purple-400" />,
     },
     {
-      text: "Monthly Performance Review",
+      text: "Job Description Analyzer",
+      icon: <Zap className="w-5 h-5 text-purple-400" />,
+    },
+  ];
+
+  const premiumFeatures = [
+    {
+      text: "Everything inside of the pro plan",
+      icon: <PackageCheck className="w-5 h-5 text-purple-400" />,
+    },
+    {
+      text: "Multi-Channel Outreach",
       icon: <TrendingUp className="w-5 h-5 text-purple-400" />,
     },
     {
-      text: "CRM Integration & Automation",
-      icon: <Settings className="w-5 h-5 text-purple-400" />,
+      text: "Meeting Scheduler",
+      icon: <Calendar className="w-5 h-5 text-purple-400" />,
     },
     {
-      text: "Intensive Sales Training Program",
-      icon: <Award className="w-5 h-5 text-purple-400" />,
+      text: "Advanced Analytics Dashboard",
+      icon: <BarChart2 className="w-5 h-5 text-purple-400" />,
     },
   ];
+
+  const getLimitedFeatures = (features: Feature[]) => {
+    const limitedFeatures = features.slice(0, 6);
+    if (features.length > 6) {
+      return [
+        ...limitedFeatures,
+        {
+          text: `+ ${features.length - 6} more features`,
+          icon: null,
+          isMuted: true,
+        },
+      ];
+    }
+    return limitedFeatures;
+  };
 
   return (
     <section id="pricing" className="px-6 py-16 md:py-24 ">
@@ -88,29 +117,29 @@ export default function PricingSection() {
             title="Free"
             price="$0"
             period="/month"
-            description="Wana start looking for jobs?"
-            features={basicFeatures}
+            description="Essential tools to begin your recruiter outreach journey"
+            features={getLimitedFeatures(recruiterReachFeatures)}
             buttonText="Get Started Now"
             buttonVariant="secondary"
           />
 
           <PricingCard
-            title="Basic"
+            title="Pro"
             price="$9.99"
             period="/month"
-            description="Wana connect to various with various founder."
-            features={professionalFeatures}
-            buttonText="Get Started Now"
+            description="Advanced features for serious job seekers with tracking"
+            features={getLimitedFeatures(professionalFeatures)}
+            buttonText="Start 7-Day Free Trial"
             isPopular={true}
           />
 
           <PricingCard
-            title="Pro"
+            title="Premium"
             price="$19.99"
             period="/month"
-            description="Getting Serious? Let's get you a job."
-            features={professionalFeatures}
-            buttonText="Get Started Now"
+            description="Complete suite with premium support and analytics"
+            features={getLimitedFeatures(premiumFeatures)}
+            buttonText="Get Premium Access"
             isPopular={false}
           />
         </div>
