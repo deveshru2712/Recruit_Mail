@@ -2,7 +2,7 @@ import Link from "next/link";
 import React from "react";
 import { Github, Linkedin, Twitter } from "lucide-react";
 
-const Footer = () => {
+export default function Footer() {
   const navLinks = [
     { name: "Features", href: "/features" },
     { name: "Pricing", href: "/pricing" },
@@ -120,6 +120,4 @@ const Footer = () => {
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}

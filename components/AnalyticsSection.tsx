@@ -12,7 +12,7 @@ import { AnalyticsFeature } from "@/constant";
 import Overlay_graph from "./Overlay_graph";
 import Charts from "./Charts";
 
-const AnalyticsSection = () => {
+export default function AnalyticsSection() {
   return (
     <section className="w-full px-4 py-6 sm:px-6 relative min-h-[calc(100vh-1px)]">
       {/* Background decoration */}
@@ -145,6 +145,4 @@ const AnalyticsSection = () => {
       </div>
     </section>
   );
-};
-
-export default AnalyticsSection;
+}

@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   ],
 };
 
-const HeroSection = () => {
+export default function HeroSection() {
   return (
     <section className="px-6 py-12 md:px-12 lg:py-24">
       <div className="max-w-6xl mx-auto text-center">
@@ -72,6 +72,4 @@ const HeroSection = () => {
       </div>
     </section>
   );
-};
-
-export default HeroSection;
+}

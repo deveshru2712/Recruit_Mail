@@ -1,6 +1,6 @@
 import React from "react";
 
-const Overlay_graph = () => {
+export default function Overlay_graph() {
   return (
     <>
       <div
@@ -13,6 +13,4 @@ const Overlay_graph = () => {
       />
     </>
   );
-};
-
-export default Overlay_graph;
+}

@@ -2,9 +2,12 @@ import React from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { recruiterReachFeatures } from "@/constant";
 
-const FeatureSection = () => {
+export default function FeatureSection() {
   return (
-    <section className="px-4 py-8 sm:px-6 lg:px-8 min-h-[calc(100vh-1px)] flex items-center bg-gradient-to-b from-transparent via-gray-900 to-transparent">
+    <section
+      id="features"
+      className="px-4 py-8 sm:px-6 lg:px-8 min-h-[calc(100vh-1px)] flex items-center bg-gradient-to-b from-transparent via-gray-900 to-transparent"
+    >
       <div className="mx-auto max-w-7xl w-full">
         <div className="mb-8 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-teal-400 to-teal-600">
@@ -70,6 +73,4 @@ const FeatureSection = () => {
       </div>
     </section>
   );
-};
-
-export default FeatureSection;
+}

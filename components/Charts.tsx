@@ -12,7 +12,7 @@ import {
 import { ChartConfig, ChartContainer } from "@/components/ui/chart";
 import { outreachData } from "@/constant";
 
-const Charts = () => {
+export default function Charts() {
   const chartConfig = {
     Open_Rate: {
       label: "Open Rate",
@@ -119,6 +119,4 @@ const Charts = () => {
       </div>
     </div>
   );
-};
-
-export default Charts;
+}

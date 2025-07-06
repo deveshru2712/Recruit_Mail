@@ -1,6 +1,6 @@
 import React from "react";
 
-const Overlay = () => {
+export default function Overlay() {
   return (
     <div className="min-h-screen w-full relative">
       {/* Base: Light background with radial gradient */}
@@ -13,6 +13,4 @@ const Overlay = () => {
       />
     </div>
   );
-};
-
-export default Overlay;
+}

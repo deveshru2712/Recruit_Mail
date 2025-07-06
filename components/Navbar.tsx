@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { redirect } from "next/navigation";
 
-const Navbar = () => {
+export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -17,24 +17,24 @@ const Navbar = () => {
           </Link>
 
           <div className="hidden md:flex items-center gap-10 font-semibold">
-            <Link
-              href={"/features"}
+            <a
+              href={"#features"}
               className="text-lg text-slate-400 hover:text-slate-200 duration-300 transition-colors"
             >
               Features
-            </Link>
-            <Link
-              href={"/integrations"}
+            </a>
+            <a
+              href={"#integrations"}
               className="text-lg text-slate-400 hover:text-slate-200 duration-300 transition-colors"
             >
               Integration
-            </Link>
-            <Link
-              href={"/pricing"}
+            </a>
+            <a
+              href={"#pricing"}
               className="text-lg text-slate-400 hover:text-slate-200 duration-300 transition-colors"
             >
               Pricing
-            </Link>
+            </a>
             <Button
               onClick={() => redirect("/sign-in")}
               className="bg-teal-600 hover:bg-teal-500 text-white cursor-pointer transition-colors duration-300"
@@ -62,27 +62,27 @@ const Navbar = () => {
           }`}
         >
           <div className="space-y-6">
-            <Link
-              href={"/features"}
+            <a
+              href={"#features"}
               className="block text-lg text-slate-400 hover:text-slate-200 duration-300 transition-colors py-2"
               onClick={() => setIsOpen(false)}
             >
               Features
-            </Link>
-            <Link
-              href={"/integrations"}
+            </a>
+            <a
+              href={"#integrations"}
               className="block text-lg text-slate-400 hover:text-slate-200 duration-300 transition-colors py-2"
               onClick={() => setIsOpen(false)}
             >
               Integration
-            </Link>
-            <Link
-              href={"/pricing"}
+            </a>
+            <a
+              href={"#pricing"}
               className="block text-lg text-slate-400 hover:text-slate-200 duration-300 transition-colors py-2"
               onClick={() => setIsOpen(false)}
             >
               Pricing
-            </Link>
+            </a>
             <Button
               className="w-full bg-teal-600 hover:bg-teal-500 text-white cursor-pointer transition-colors duration-300 py-4 text-lg"
               onClick={() => setIsOpen(false)}
@@ -94,6 +94,4 @@ const Navbar = () => {
       </nav>
     </div>
   );
-};
-
-export default Navbar;
+}

@@ -11,7 +11,7 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { signInWithGoogle } from "@/lib/actions/auth.actions";
 
-const Page = () => {
+export default function Page() {
   return (
     <div className="h-screen w-screen flex justify-center items-center relative px-8 py-6">
       <div className="absolute inset-0 bg-gray-950/50 -z-50" />
@@ -88,6 +88,4 @@ const Page = () => {
       </Card>
     </div>
   );
-};
-
-export default Page;
+}
