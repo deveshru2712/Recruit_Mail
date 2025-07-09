@@ -14,7 +14,7 @@ import Charts from "./Charts";
 
 export default function AnalyticsSection() {
   return (
-    <section className="w-full px-4 py-6 sm:px-6 relative min-h-[calc(100vh-1px)]">
+    <section id="performance" className="px-4 py-6 sm:px-6 relative md:py-24">
       {/* Background decoration */}
       <div className="absolute inset-0 overflow-hidden -z-10">
         <div className="absolute top-0 left-1/2 w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] -translate-x-1/2 -translate-y-1/2 bg-teal-500/10 rounded-full blur-[75px] sm:blur-[100px]" />

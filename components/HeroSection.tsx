@@ -1,28 +1,11 @@
 import React from "react";
-import { Metadata } from "next";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
 
-export const metadata: Metadata = {
-  title: "RecruiterReach - Automated Personalized Email Outreach",
-  description:
-    "Streamline your job search with AI-powered personalized email automation for recruiters. Send tailored, professional outreach emails that get results.",
-  keywords: [
-    "automated email",
-    "recruiter outreach",
-    "personalized emails",
-    "job search automation",
-    "recruitment emails",
-    "AI email writing",
-    "professional networking",
-    "career development",
-  ],
-};
-
 export default function HeroSection() {
   return (
-    <section className="px-6 py-12 md:px-12 lg:py-24">
+    <section className="px-6 py-12 lg:py-24">
       <div className="max-w-6xl mx-auto text-center">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-100 mb-6 leading-tight">
           <span className="bg-gradient-to-r from-teal-400 to-teal-600 text-transparent bg-clip-text">

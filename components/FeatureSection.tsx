@@ -6,7 +6,7 @@ export default function FeatureSection() {
   return (
     <section
       id="features"
-      className="px-4 py-8 sm:px-6 lg:px-8 min-h-[calc(100vh-1px)] flex items-center bg-gradient-to-b from-transparent via-gray-900 to-transparent"
+      className="px-4 py-8 sm:px-6 lg:px-8 md:py-24 flex items-center bg-gradient-to-b from-transparent via-gray-900 to-transparent"
     >
       <div className="mx-auto max-w-7xl w-full">
         <div className="mb-8 text-center">

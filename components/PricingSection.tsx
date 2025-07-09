@@ -88,7 +88,7 @@ export default function PricingSection() {
   };
 
   return (
-    <section id="pricing" className="px-6 py-16 md:py-24 ">
+    <section id="pricing" className="h-full px-6 py-16 md:py-24 ">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-100 mb-4">
           <span className="">Simple</span>{" "}
