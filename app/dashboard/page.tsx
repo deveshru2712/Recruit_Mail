@@ -1,3 +1,9 @@
+import Navbar from "@/components/User/Navbar";
+
 export default function Page() {
-  return <div className="text-slate-50">This is Dashboard</div>;
+  return (
+    <div>
+      <Navbar />
+    </div>
+  );
 }
