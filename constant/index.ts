@@ -118,3 +118,41 @@ export const trendData = [
   { name: "Week 4", value: 275 },
   { name: "Week 5", value: 400 },
 ];
+
+export const emails = [
+  {
+    senderName: "John Doe",
+    senderEmail: "john.doe@example.com",
+    subject: "Meeting Tomorrow",
+    body: "Hi, just a reminder about our meeting tomorrow at 10 AM. Please bring your project updates.",
+    timeSent: "2023-11-15T09:30:00Z",
+  },
+  {
+    senderName: "Jane Smith",
+    senderEmail: "jane.smith@example.com",
+    subject: "Project Deadline",
+    body: "Hello, the project deadline has been extended to next Friday. Let me know if you have any questions.",
+    timeSent: "2023-11-14T14:15:00Z",
+  },
+  {
+    senderName: "Alex Johnson",
+    senderEmail: "alex.johnson@example.com",
+    subject: "Weekend Plans",
+    body: "Hey, are you free this weekend? We’re planning a small get-together.",
+    timeSent: "2023-11-13T18:45:00Z",
+  },
+  {
+    senderName: "Sarah Williams",
+    senderEmail: "sarah.williams@example.com",
+    subject: "Invoice #1234",
+    body: "Please find attached the invoice for your recent purchase. Due date is November 20th.",
+    timeSent: "2023-11-12T11:20:00Z",
+  },
+  {
+    senderName: "Michael Brown",
+    senderEmail: "michael.brown@example.com",
+    subject: "Feedback Request",
+    body: "We’d love to hear your feedback on our service. Here’s a short survey.",
+    timeSent: "2023-11-11T16:10:00Z",
+  },
+];
