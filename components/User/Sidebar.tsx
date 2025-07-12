@@ -8,6 +8,7 @@ import {
   Settings,
   User,
 } from "lucide-react";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 export default function Sidebar() {
@@ -16,6 +17,8 @@ export default function Sidebar() {
     ALREADY_READ = "alreadyRead",
     UNREAD = "unread",
   }
+
+  const router = useRouter();
 
   const [isActive, setIsActive] = useState<Active>(Active.ALLMESSAGE);
 
@@ -63,7 +66,10 @@ export default function Sidebar() {
 
             <ul className="text-sm space-y-2 pl-3">
               <li
-                onClick={() => setIsActive(Active.ALLMESSAGE)}
+                onClick={() => {
+                  setIsActive(Active.ALLMESSAGE);
+                  router.push(`/dashboard/${Active.ALLMESSAGE}`);
+                }}
                 className={`cursor-pointer transition-all duration-200 py-1.5 px-3 rounded-lg ${
                   isActive === Active.ALLMESSAGE
                     ? "font-medium text-teal-400 bg-gray-800"
@@ -78,7 +84,10 @@ export default function Sidebar() {
                     ? "font-medium text-teal-400 bg-gray-800"
                     : "text-gray-400 hover:text-gray-200 hover:bg-gray-800/50"
                 }`}
-                onClick={() => setIsActive(Active.ALREADY_READ)}
+                onClick={() => {
+                  setIsActive(Active.ALREADY_READ);
+                  router.push(`/dashboard/${Active.ALREADY_READ}`);
+                }}
               >
                 Already Read
               </li>
@@ -88,7 +97,10 @@ export default function Sidebar() {
                     ? "font-medium text-teal-400 bg-gray-800"
                     : "text-gray-400 hover:text-gray-200 hover:bg-gray-800/50"
                 }`}
-                onClick={() => setIsActive(Active.UNREAD)}
+                onClick={() => {
+                  setIsActive(Active.UNREAD);
+                  router.push(`/dashboard/${Active.UNREAD}`);
+                }}
               >
                 Unread
               </li>

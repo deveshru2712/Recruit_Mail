@@ -21,8 +21,12 @@ export default async function middleware(request: NextRequest) {
       return NextResponse.next();
     }
 
+    if (pathname === "/dashboard") {
+      return NextResponse.redirect(new URL("/dashboard/all", request.url));
+    }
+
     if (authRoute.includes(pathname) && token) {
-      return NextResponse.redirect(new URL("/dashboard", request.url));
+      return NextResponse.redirect(new URL("/dashboard/all", request.url));
     }
 
     if (protectedRoute.some((route) => pathname.startsWith(route))) {
